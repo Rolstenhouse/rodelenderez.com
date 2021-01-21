@@ -26,6 +26,8 @@ const App = () => {
     "/photos/rodel2.png",
     "/photos/rodel.png",
     "/photos/bassoon.jpeg",
+    "/photos/rodel3.png",
+    "/photos/rodel4.png"
   ];
 
   useEffect(() => {

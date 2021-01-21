@@ -22,15 +22,17 @@ function getRandomInt(min, max) {
 
 const App = () => {
   const [images, setImages] = useState([]);
+  var pics = Array('/photos/rodel2.png', '/photos/rodel.jpeg', '/photos/bassoon.jpeg')
 
   useEffect(() => {
     // Every 2 seconds add another image
     setInterval(()=>{
       let x = getRandomInt(10, window.innerWidth-10);
       let y = getRandomInt(10, window.innerHeight-10);
+      console.log('hello')
       let size = getRandomInt(50, 400);
       const img = {
-        url: "/photos/bassoon.jpeg",
+        url: pics[Math.floor(Math.random() * pics.length)],
         x: x,
         y: y,
         size: size,

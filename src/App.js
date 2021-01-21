@@ -1,10 +1,32 @@
+import React, { useEffect } from 'react';
+
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+/**
+ * 
+ */
+const imageType = {
+  url: "",
+  x: "",
+  y: "",
+  rotationSpeed: ""
+}
+
+const App = () => {
+
+  const [images, setImages] = useState([])
+
+  useEffect(() =>{
+
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
+        {images.map((image) => {
+          return <img src={image.url} />
+        })}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

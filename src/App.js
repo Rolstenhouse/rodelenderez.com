@@ -29,7 +29,6 @@ const App = () => {
     setInterval(()=>{
       let x = getRandomInt(10, window.innerWidth-10);
       let y = getRandomInt(10, window.innerHeight-10);
-      console.log('hello')
       let size = getRandomInt(50, 400);
       const img = {
         url: pics[Math.floor(Math.random() * pics.length)],

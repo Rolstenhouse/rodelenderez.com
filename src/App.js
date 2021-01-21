@@ -52,10 +52,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img
-          src="/photos/rodel2.png"
-          className="rotate"
-        />
+        <img src="/photos/rodel2.png" className="rotate" />
         {images.map((image) => {
           return (
             <img
@@ -70,6 +67,37 @@ const App = () => {
             />
           );
         })}
+        <div
+          style={{
+            width: "100%",
+            height: 50,
+            backgroundColor: "black",
+            position: "fixed",
+            bottom: 0,
+            color: "white",
+            fontSize: 20,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <marquee scrollamount="15">
+            made with ❤️ by
+            <a
+              style={{ display: "inline", margin: ".4em", color: "white" }}
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            >
+              tyler
+            </a>
+            &
+            <a
+              style={{ display: "inline", margin: ".4em", color: "white" }}
+              href="https://github.com/Rolstenhouse/rodelenderez.com"
+            >
+              rob
+            </a>{" "}
+          </marquee>
+        </div>
       </header>
     </div>
   );

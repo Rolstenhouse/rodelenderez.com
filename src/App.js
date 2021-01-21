@@ -22,16 +22,20 @@ function getRandomInt(min, max) {
 
 const App = () => {
   const [images, setImages] = useState([]);
-  var pics = Array('/photos/rodel2.png', '/photos/rodel.png', '/photos/bassoon.jpeg')
+  const pics = [
+    "/photos/rodel2.png",
+    "/photos/rodel.png",
+    "/photos/bassoon.jpeg",
+  ];
 
   useEffect(() => {
     // Every 2 seconds add another image
     const interval = setInterval(() => {
-      if (!window.innerWidth || !window.innerHeight) { 
-        return
+      if (!window.innerWidth || !window.innerHeight) {
+        return;
       }
-      let x = getRandomInt(10, window.innerWidth - 10);
-      let y = getRandomInt(10, window.innerHeight - 10);
+      let x = getRandomInt(0, window.innerWidth - 300);
+      let y = getRandomInt(0, window.innerHeight - 300);
       let size = getRandomInt(50, 400);
       const img = {
         url: pics[Math.floor(Math.random() * pics.length)],
@@ -40,16 +44,18 @@ const App = () => {
         size: size,
       };
       setImages([...images, img]);
-      console.log(images);
-      console.log(img);
-    }, 3000);
+    }, 1500);
 
-    return () => clearInterval(interval)
+    return () => clearInterval(interval);
   }, [images]);
 
   return (
     <div className="App">
       <header className="App-header">
+        <img
+          src="/photos/rodel2.png"
+          className="rotate"
+        />
         {images.map((image) => {
           return (
             <img

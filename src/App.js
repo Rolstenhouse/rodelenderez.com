@@ -1,31 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 /**
- * 
+ *
  */
 const imageType = {
   url: "",
   x: "",
   y: "",
-  rotationSpeed: ""
-}
+  rotationSpeed: "",
+};
 
 const App = () => {
+  const [images, setImages] = useState([]);
 
-  const [images, setImages] = useState([])
-
-  useEffect(() =>{
-
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="App">
       <header className="App-header">
         {images.map((image) => {
-          return <img src={image.url} />
+          return <img src={image.url} />;
         })}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -42,6 +39,6 @@ const App = () => {
       </header>
     </div>
   );
-}
+};
 
 export default App;

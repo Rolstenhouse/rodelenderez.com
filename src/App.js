@@ -83,7 +83,7 @@ const App = () => {
             alignItems: "center",
           }}
         >
-          <marquee scrollamount="15">
+          <marquee scrollamount="4">
             made with ❤️ by
             <a
               style={{ display: "inline", margin: ".4em", color: "white" }}

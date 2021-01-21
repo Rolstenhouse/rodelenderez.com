@@ -11,31 +11,52 @@ const imageType = {
   x: "",
   y: "",
   rotationSpeed: "",
+  size: "",
 };
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
 
 const App = () => {
   const [images, setImages] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // Every 2 seconds add another image
+    setInterval(()=>{
+      let x = getRandomInt(10, window.innerWidth-10);
+      let y = getRandomInt(10, window.innerHeight-10);
+      let size = getRandomInt(50, 400);
+      const img = {
+        url: "/photos/bassoon.jpeg",
+        x: x,
+        y: y,
+        size: size,
+      }
+      setImages([...images, img])
+    }, 2000)
+
+  }, []);
 
   return (
     <div className="App">
       <header className="App-header">
         {images.map((image) => {
-          return <img src={image.url} />;
+          return (
+            <img
+              src={image.url}
+              style={{
+                position: "absolute",
+                x: image.x,
+                y: image.y,
+                width: image.size,
+              }}
+              className="rotate"
+            />
+          );
         })}
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
